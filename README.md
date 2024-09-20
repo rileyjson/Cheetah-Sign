@@ -1,4 +1,4 @@
-# CapstoneProjectTemplate /* Replace this line with the title of your project */
+# Cheetah-Sign
 
 ## **Summary**
 
@@ -6,18 +6,19 @@ Put a very high-level summary of the project.
 
 ## **Team Members**
 
-- Joe Black
-- Joe Pesci
-- Joe Dalton
+- Levi Shelley
+- Riley Jamison
+- Hunter Johns
+- Tia Self
 
 ## **Client Partner Information**
 
 ### *Company:*
-WHATEVER COMPANY or CORRESPONDENCE
+Accutech
 
 ### *People:*
-- Jane Fonda
-- Jane Lynch
+- Josh Rittenhouse
+- Ryland Babusiak
 
 ## **Links**
 

@@ -1,4 +1,4 @@
-# Cheetah Sign Software Architecture
+# Software Architecture
 
 This is the architecture design for the Cheetah Sign project. It details how each module communicates and a brief explanation of what they mean for the architecture and why we decided to make it a module.
 

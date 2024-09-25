@@ -75,6 +75,11 @@
 * FR17 - The system will have separate administrative tools for checking the audit trail of each document (FR16) and will not be visible to outside parties beyond a confirmation of time and date of when they have received the document to be signed (FR9) and time and date of when they signed (FR10) and/or returned the document (FR13)
 	* UC5
 	* High Priority
+
+ ### Use Case 6
+ * FR19 - The system will require a valid and consistent username and password in a login system from administrators in order to allow them to access the confidential information stored by the system (FR1).
+	* UC6
+	* High Priority  
 	
 ## Non-functional Requirements
 
@@ -89,3 +94,7 @@
 * NR3 - When a file is sent over email (FR9), the administrators will be able to send a full email that also includes the link, it will not be an otherwise empty email that only houses the link.
 	* UC2
 	* Low Priority
+   
+* NR4 - When the program opens, the login screen (FR19) will be the first page visible to the administrators
+	* UC6 
+	* Medium Priority

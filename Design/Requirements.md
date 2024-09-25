@@ -77,7 +77,7 @@
 	* High Priority
 
  ### Use Case 6
- * FR19 - The system will require a valid and consistent username and password in a login system from administrators in order to allow them to access the confidential information stored by the system (FR1).
+ * FR18 - The system will require a valid and consistent username and password in a login system from administrators in order to allow them to access the confidential information stored by the system (FR1).
 	* UC6
 	* High Priority  
 	

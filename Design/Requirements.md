@@ -71,8 +71,8 @@
 * FR16 - The system will store an audit trail within the data of each document separately. This audit trail will include, but may not be limited to: time and date of upload to the system (FR1), time and date of any edits to the text fields within a document (FR11), time and date of when the document was sent to an outside party for signing (FR9), time and date of when the document was signed (FR10) and/or returned (FR13)
 	* UC5
 	* High Priority
-	
-	* FR17 - The system will have separate administrative tools for checking the audit trail of each document (FR16) and will not be visible to outside parties beyond a confirmation of time and date of when they have received the document to be signed (FR9) and time and date of when they signed (FR10) and/or returned the document (FR13)
+
+* FR17 - The system will have separate administrative tools for checking the audit trail of each document (FR16) and will not be visible to outside parties beyond a confirmation of time and date of when they have received the document to be signed (FR9) and time and date of when they signed (FR10) and/or returned the document (FR13)
 	* UC5
 	* High Priority
 	

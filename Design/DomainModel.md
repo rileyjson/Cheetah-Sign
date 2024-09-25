@@ -44,7 +44,7 @@ classDiagram
 
         addDocumentToList()
         removeDocumentFromList()
-        viewDocumentList(): List[documentStorage]
+        viewDocumentList() List[documentStorage]
     }
 
     class Client {

@@ -9,7 +9,7 @@
 ## Document Repository
 ### Main Page
 ![Document Repository Page ](https://github.com/user-attachments/assets/b0b9ef31-4df6-495c-94f9-461b6e128c20)
-### Send Doucment 
+### Send Document 
 ![Send Doc in Document Repository](https://github.com/user-attachments/assets/825129a0-8fc3-4863-857e-2ddc98aa7840)
 
 ## Clients

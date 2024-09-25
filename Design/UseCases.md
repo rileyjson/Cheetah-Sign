@@ -99,8 +99,12 @@ The sent documents will contain an audit trail with the following information:
 
 
 **Why**: In order to maintain legally binding documents, the cheetah sign documents should be as tamper-proof as possible.
-To achieve this, there will be a login system where cheetah sign administrators 
+To achieve this, there will be a login system where cheetah sign administrators must input a username and password in
+order to prove it is them. This will help avoid tampering and ensure that the documents are proper and organized.
+
+Not implementing measures to protect the legally binding documents directly clashes with BR1.
 
 **Actors**:
 
-**Flow**:
+**Flow**: When opening the program, users will be directed to a login screen. The user must input their username and
+password in order to access their files.

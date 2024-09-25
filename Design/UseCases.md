@@ -98,7 +98,8 @@ The sent documents will contain an audit trail with the following information:
 ### UC6: Login System for Cheetah Sign Administrators
 
 
-**Why**: 
+**Why**: In order to maintain legally binding documents, the cheetah sign documents should be as tamper-proof as possible.
+To achieve this, there will be a login system where cheetah sign administrators 
 
 **Actors**:
 

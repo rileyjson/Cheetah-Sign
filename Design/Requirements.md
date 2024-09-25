@@ -23,7 +23,7 @@
 	* UC1
 	* Medium Priority
 
-* FR18 - The system will allow for deletion of stored documents (FR1).
+* FR14 - The system will allow for deletion of stored documents (FR1).
 	* UC1
 	* High Priority 
 
@@ -63,7 +63,7 @@
 	* UC4
 	* High Priority
 	
-* FR15 - When the 'Return' button is clicked, the system will save and a copy of the document will be sent back to the administrator that had originally sent the document for signing, replacing the version of the document found within the system under 'sent for signing' documents (FR4) but instead put into 'received' documents (FR5). This does not replace the original, unsigned document.
+* FR15 - When the 'Return' button (FR13) is clicked, the system will save and a copy of the document will be sent back to the administrator that had originally sent the document for signing, replacing the version of the document found within the system under 'sent for signing' documents (FR4) but instead put into 'received' documents (FR5). This does not replace the original, unsigned document.
 	* UC4
 	* High Priority
 

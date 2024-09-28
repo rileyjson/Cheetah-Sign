@@ -1,7 +1,3 @@
-# Actors
-
-
-
 # Use Cases
 
 ### UC1: Manage Documents
@@ -14,7 +10,7 @@ Managing documents is vital to the efficiency of Cheetah Sign and should be a ma
 If this is not implemented, it is likely that use of the Cheetah Sign system will be slow and clunky, as well as lacking
 the ability to store documents, resulting in a direct clash with BR1.
 
-**Actors**:
+**Actors**: Administrators
 
 **Flow**: When the user is accessing Cheetah Sign GUI, the user should be able to select from the following options:
 - Upload a document
@@ -34,7 +30,7 @@ sign documents is vital to the use of Cheetah Sign.
 
 Not implementing the ability to sign documents directly clashes with BR1.
 
-**Actors**:
+**Actors**: Administrators
 
 **Flow**: An administrator user should be able to access any given unsigned document through document management. When a
 document has been selected, the user will then be able to click on the areas where signatures need to be placed. In the
@@ -51,7 +47,7 @@ legally binding agreement. Therefore, the ability to prepare and send documents 
 
 Not implementing the ability to prepare and send documents directly clashes with BR1.
 
-**Actors**:
+**Actors**: Administrators
 
 **Flow**: A Cheetah Sign administrator should access a document via the document management feature. Once a document has
 been accessed, the administrator should be able to select a location on the document for a insert box to be placed. The
@@ -66,7 +62,7 @@ important that clients are able to sign the document and then send the signed do
 and processing. If a document is not signable by clients, then the document cannot become a legally binding agreement,
 directly clashing with BR1.
 
-**Actors**:
+**Actors**: Clients
 
 **Flow**: Clients will access the document sent to them via their email in a web browser. They will select the individual
 areas where their signature and personal information is required, and then fill in the fields with the required information.
@@ -82,7 +78,7 @@ is vital to keep track of where a document currently is and who it has yet to be
 it will be a massive loss of efficiency with the efforts taken to gather this information. Furthermore, it could result
 in legal issues, both of which clash with BR1.
 
-**Actors**:
+**Actors**: Administrators
 
 **Flow**: From the GUI, Cheetah Sign administrators will be able to access uploaded documents and view the following
 information. 
@@ -104,7 +100,7 @@ order to prove it is them. This will help avoid tampering and ensure that the do
 
 Not implementing measures to protect the legally binding documents directly clashes with BR1.
 
-**Actors**:
+**Actors**: Administrators
 
 **Flow**: When opening the program, users will be directed to a login screen. The user must input their username and
 password in order to access their files.

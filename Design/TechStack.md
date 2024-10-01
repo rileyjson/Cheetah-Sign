@@ -6,7 +6,6 @@ This is an outline of the tech stack chosen for the Cheetah Sign project and the
 
 **Frameworks** - [Vue.js](https://vuejs.org/)
 <br>
-**CSS Frameworks** -
 
 Vue.js is a popular open-source JavaScript framework that is used to create interactive user interfaces and single-page applications. It was praised by our client for being easier to learn and having much better syntax than other Javascript frameworks. Along with it being easier to learn, it has a large community with plenty of documentation and tutorials.
 

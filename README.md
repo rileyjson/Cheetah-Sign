@@ -34,3 +34,6 @@ Accutech
 - [Php Backend](https://www.github.com/WHEREEVER_THE_PHP_CODE_IS)
 - Others if more.
 
+## **Project Management Tool Link**
+
+https://app.hacknplan.com/p/210124/kanban?categoryId=0&boardId=580746

@@ -13,84 +13,65 @@ classDiagram
         -firstName: String
         -lastName: String
         -email: String
-        -allDocuments: List[allDocumentsList]
+        -documents: DocumentJob[]
+        -clients: Client[]
 
-        +uploadDocument() void
-        +removeDocument(docId: int) void
-        +storeAllDocuments(docId: int) void
-        +getAllDocuments() allDocumentsList
+        +manageClients(Client) void
+
+
 
     }
 
-    class DocumentAction {
+    class DocumentBlueprint {
         -docId: int
-        -uid: int
-        -action: String
-        -actionDate: datetime
+        -docName: String
+        -uploadedDocument: file
+        -signingArea: SigningArea
 
-        +signDocument(docId: int) void
-        +sendDocument(docId: int) void
-        +returnDocument(docId: int) void
-        +auditTrail(action: String, docId: int, uid: int) void
+
+        +uploadDocument(uploadDocument: file, docName: String) DocumentBlueprint
+        +addSigningArea(signingArea) bool
+    }
+
+    class DocumentJob {
+        -docId: int
+        -name: String
+        -uid: int
+        -uploadDocument: file
+        -blueprint: DocumentBlueprint
+        -signature: String
+        -audits: AuditTrail[]
+        -docStatus: DocumentStatus
+
+        +selectDocument(DocumentBlueprint) DocumentJob
+        +signDocument(docId: int, signature: String) void
+        +sendDocument(docId: int) bool
+        +returnDocument(docId: int) bool
+
+    }
+
+    class DocumentRepository {
+        docId: int
+        documents: DocumentBlueprint[]
+        preparedDocuments: DocumentJob[]
+
+        viewDocument(docId: int) DocumentJob
+        deleteDocument(docId: int) bool
+        addDocumentToFavorites(docId: int, documents) bool
+        removeDocumentFromFavorites(docId: int) bool
 
     }
 
     class AuditTrail {
-        -auditList: List[auditHistory]
+        -docJob: DocumentJob
         -auditAction: AuditType
         -uid: int
         -timestamp: datetime
 
-        +createAudit(auditAction: String, uid: int)
-        +viewAudits(docId: int) auditList
+        +createAudit(docJob: DocumentJob, auditAction: String, uid: int)
     }
 
-    class DocumentManagement {
-        -docId: int
-        -docName: String
 
-        -favoriteDocuments: List[favoriteDocumentsList]
-        -readyDocuments: List[readyDocumentsList]
-        -sentDocuments: List[sentDocumentsList]
-
-        +prepareDocument(docId: int) void
-        +saveDocumentToFavorites(docId: int) void
-        +removeDocumentFromFavorites(docId: int) void
-
-        +addReadyDocuments(docId: int) void
-        +addSentDocuments(docId: int) void
-        +viewFavoriteDocuments() favoriteDocuments
-        +viewReadyDocuments() readyDocuments
-        +viewSentDocuments() sentDocuments
-    }
-
-    class Document {
-        -docId: int
-        -docName: String
-        -status: DocumentStatus
-
-        +getDocumentId() int
-        +getDocumentName() String
-        +getDocumentStatus() documentStatus
-        +setDocumentId(docId: int)
-        +setDocumentName(docName: String)
-        +setDocumentStatus(status: DocumentStatus)
-        +generateLink(docId: int) String
-
-    }
-
-    class Client {
-        -uid: int
-        -clientId: int
-        -clientName: String
-        -clientEmail: String
-        -clientAddress: String
-        -clientPhone: int
-        -clientList: List[clients]
-
-        +addClientToList(clientId: int) void
-        +removeClientFromList(clientId: int) void
-    }
 
     class DocumentStatus {
         <<Enumeration>>
@@ -111,30 +92,29 @@ classDiagram
     }
 
     class SigningArea {
-        -areaCoordinates: double
+        -coordinateX: double
+        -coordinateY: double
         -areaWidth: int
         -areaHeight: int
 
-        +getCoordinates() double
-        +getWidth() int
-        +getHeight() int
-
-        +setCoordinates(areaCoordinates: double)
-        +setWidth(width: int)
-        +setHeight(height: int)
-
+        defineSigningArea() void
 
     }
 
+    class Client {
+        clientId: int
+        clientName: String
+        clientEmail: String
 
-    Document "1"--*"*" DocumentAction
-    Document "*"--*"1" DocumentManagement
-    DocumentManagement "1"--"*" SigningArea
-    Administrator "1"--"*" Document
-    DocumentAction "1"--"1" AuditTrail
-    DocumentAction ..> DocumentStatus
+    }
+
+    Client "*"--o"1" Administrator
+    DocumentBlueprint "1"--*"*" DocumentJob
+    DocumentBlueprint "1"--"*" SigningArea
+    DocumentJob "1"--"1" AuditTrail
+    DocumentJob ..> DocumentStatus
     AuditTrail ..> AuditType
-    Client "*"--"1" Administrator
+
 
 ```
 
@@ -142,27 +122,23 @@ classDiagram
 
 ### Administrator
 
-The Administrator class represents the main users of the system. This is where the documents will first be uploaded by the admin. We want to provide a login feature so each admin has their own documents and customization. All documents, actions, and audit trails are saved to each admin user.
+The Administrator class represents the main users of the system. Every admin in the system will share the same pool of uploaded documents from a 'document repository'. Admins will be able to manage their clients information. Eventually we want to provide a login feature so each admin can have their own customization like favorited documents.
 
-### Document
+### DocumentBluePrint
 
-The document class represents the place where all documents will start. This is where you the document's id, name, and status will be set. Document has a parent-child relationship with the DocumentManagement and DocumentAction classes.
-
-### DocumentAction
-
-The DocumentAction class contains everything you need to use your documents. You can sign, send, and return documents here. Also, this is where you audit trail will be logged depending on the action you perform. The DocumentAction class holds a relationship with the AuditTrail class to log audits.
-
-### DocumentManagement
-
-This is where you will be managing your documents in various ways. In our system, we want to be able to sort documents depending on their status. For example, documents that are ready for sending and documents that have been sent. Furthermore, we want to offer some customization for the Administrator by letting them favorite frequently used documents.
-
-### AuditTrail
-
-The AuditTrail class is responsible for logging all actions performed on documents to form an audit trail. It will keep track of audit type, the user who made the audit, and the time it happened.
+The Document Blueprint class represents the place where all documents will be created. The admin can upload their document and prepare it by giving it a name and setting the areas that needs to be signed by the designees. After doing this the document can become a 'document job'.
 
 ### SigningArea
 
-The SigningArea class is the last piece of the document management. This class will be used to specify exactly where the designees need to sign by marking coordinates of the page.
+The SigningArea class is used to specify exactly where the designees need to sign. This will be done by marking coordinates of the page and setting a width and height of the text box.
+
+### DocumentJob
+
+The DocumentJob class represents the documents after they have been uploaded and prepared. It becomes a job because the documents can be signed, sent, returned, etc. All document jobs will have an audit trail to keep track of the actions performed on the documents.
+
+### AuditTrail
+
+The AuditTrail class is responsible for logging all actions performed on document jobs to form an audit trail. It uses an enum that contains audit type values to keep track of the audit type, the user who made the audit, and the time it happened.
 
 ### Client
 
@@ -170,7 +146,7 @@ The Client class will be used by administrators to save their client's informati
 
 ### AuditType
 
-This class is an enumeration that defines the various audit types whenever an action on a document takes place. This well help keep a trail of all document audits. The possible audit types include:
+This class is an enumeration that defines the various audit types whenever an action on a document takes place. This will help to keep a trail of all document audits. The possible audit types include:
 <br>
 **SENT**: Indicates that the document has been sent to the designees.
 <br>

@@ -109,11 +109,12 @@ classDiagram
     }
 
     Client "*"--o"1" Administrator
-    DocumentBlueprint "1"--*"*" DocumentJob
+    DocumentBlueprint "1"--o"*" DocumentJob
     DocumentBlueprint "1"--"*" SigningArea
     DocumentJob "1"--"1" AuditTrail
     DocumentJob ..> DocumentStatus
     AuditTrail ..> AuditType
+
 
 
 ```
@@ -124,7 +125,7 @@ classDiagram
 
 The Administrator class represents the main users of the system. Every admin in the system will share the same pool of uploaded documents from a 'document repository'. Admins will be able to manage their clients information. Eventually we want to provide a login feature so each admin can have their own customization like favorited documents.
 
-### DocumentBluePrint
+### DocumentBlueprint
 
 The Document Blueprint class represents the place where all documents will be created. The admin can upload their document and prepare it by giving it a name and setting the areas that needs to be signed by the designees. After doing this the document can become a 'document job'.
 

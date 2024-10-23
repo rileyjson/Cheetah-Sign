@@ -53,7 +53,7 @@ The powershell will display commands. Most importantly, you will use
 Everything relating to the front end will be found in the 'cheetahsign-webclient' directory. By default, the app will run
 the App.vue file. 
 
-App.bue is a file that inherits HelloWorld.vue, which inherits DailyForecast.vue. You can modify these Vue files to
+App.vue is a file that inherits HelloWorld.vue, which inherits DailyForecast.vue. You can modify these Vue files to
 begin work, or you may make a new Vue file. 
 
 When making a new Vue file, ensure that you edit 'main.ts' to open your newly made

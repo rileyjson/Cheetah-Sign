@@ -18,8 +18,8 @@ bottom of the admin page. Select the "Browse..." button to open up your local fi
 you would like to upload. Cheetah Sign has been designed and tested with .PDF files only, and it is best for to try
 and stick to those files. 
 
-![UploadForm](./images/uploadButton.png)  
-![FileBrowse](./images/fileSelection.png)
+![UploadForm](./images/uploadButton.PNG)  
+![FileBrowse](./images/fileSelection.PNG)
 
 After selecting your .PDF file, click the green upload button. The file should be uploaded to the server and can be used. After
 uploading the file, it is a good idea to reload the page.
@@ -68,6 +68,15 @@ As a client, you will have the ability to:
 
 ### View Documents sent to you
 
+At the bottom of the page is the client section. This is where jobs that have been sent out can be found. It contains a dropdown
+menu listing off all currently prepared jobs. The selection lists the document name and the client, so you can choose which
+one applies to you.
 
+![SentJobsList](./images/sentJobsList.PNG)
 
 ### Sign Documents
+
+After selecting a document, a text box will appear with a sign button. Simply type in your name and select the "Sign" button
+to sign the document!
+
+![SigningDocument](./images/signingDocument.PNG)

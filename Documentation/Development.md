@@ -99,7 +99,7 @@ Docker composing will spin up 3 images:
 
 ![dockerContainer](./images/DockerContainer.png)
 
-### Setting Up Postgres
+### Setting Up Postgres (pgadmin)
 
 The pgdata container will expose a specific port that you can use to setup your database server,
 so that the API can connect to the database. To setup your database, go to the port
@@ -122,17 +122,20 @@ within the Cheetah.Sign.Api directory. This is to make sure
 you have all necessary packages and your enviroment
 will have the correct dependencies and project-specific tools.
 
-### Setting Up PostgreSQL Tables
+### Setting Up PostgreSQL Tables (pgadmin & EF)
 
-At the time of this writing, we are using two tables for our application.
-For the first one, create a table named 'Documents' with the first column, a primary key, being 'Id' with the type Serial,
+There are two parts to setting up the our tables
+when using Microsoft's Entity Framework. First is
+in pgadmin and second is in your C# code. We have the latter already setup!
+
+At the time of this writing, we are using two tables for our application. For the first one, create a table named 'Documents' with the first column, a primary key, being 'Id' with the type Serial,
 the second column being 'Name' with the type text, and the last column being 'File' with
 the type bytea.
 
 For the second one, create a table named 'Jobs' with the first column, a primary key, being 'Id' with the type Serial,
 the second column being 'FileName' with the type text, the third column being
 'ClientName' with the type text, and the last one being 'Status' with the type text.
-Don't forget to define your tables in your code as well, located in 'AppDbContext'!
+If there are problems don't forget to check if the tables are defined in the code as well, located in 'AppDbContext'!
 
 ### Editing the Backend
 

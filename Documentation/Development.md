@@ -11,6 +11,8 @@ If any problems occur during this process you can email riley.jamison@bsu.edu fo
 
 ## Prerequisites
 
+### Cloning the Repository
+
 You will need to access and clone the repository containing the source code. Our repository can be
 found here:
 https://bitbucket.org/accutechcapstone/bsu.cheetah.sign/src/main
@@ -86,12 +88,11 @@ made vue file.
 
 ### Running the Backend
 
-Open your preferred IDE with the ability to compose. You should run the "docker-compose" startup option.
-(You can also right click on the docker-compose.yml file and select "compose up".)
+Open your preferred IDE with the ability to compose. We are using VSCode so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now you should right click on the docker-compose.yml file and select "compose up".
 
 ![dockerCompose](./images/dockerCompose.png)
 
-Docker composing will spin up 3 images:
+Docker compose will spin up 3 images:
 
 - cheetah.sign.api
 - pgdata

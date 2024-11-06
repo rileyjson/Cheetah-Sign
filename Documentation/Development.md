@@ -113,9 +113,6 @@ After clicking register, you will be shown a configuration pop-up. Name your dat
 connection tab. This is where you will enter the information from the Docker Compose file. The
 Host Name should be 'flow-pgdata', Port should be '5432', Username should be 'admin',
 and Password should be 'secret'. After saving you should be able to create your tables.
-Create a table named 'Documents' with the first column, a primary key, being "Id" with the type Serial,
-the second column being 'Name' with the type text, and the last column being 'File' with
-the type bytea.
 
 We are using Microsoft's Entity Framework to connect to PostgreSQL.
 This requires a few configurations in your project.
@@ -123,6 +120,18 @@ Before attempting to use the application, run 'dotnet restore' in your terminal
 within the Cheetah.Sign.Api directory. This is to make sure
 you have all necessary packages and your enviroment
 will have the correct dependencies and project-specific tools.
+
+### Setting Up PostgreSQL Tables
+
+At the time of this writing, we are using two tables for our application.
+For the first one, create a table named 'Documents' with the first column, a primary key, being 'Id' with the type Serial,
+the second column being 'Name' with the type text, and the last column being 'File' with
+the type bytea.
+
+For the second one, create a table named 'Jobs' with the first column, a primary key, being 'Id' with the type Serial,
+the second column being 'FileName' with the type text, the third column being
+'ClientName' with the type text, and the last one being 'Status' with the type text.
+Don't forget to define your tables in your code as well, located in 'AppDbContext'!
 
 ### Editing the Backend
 

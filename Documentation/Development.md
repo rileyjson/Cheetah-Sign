@@ -109,6 +109,7 @@ Docker Compose file to find your login credentials and database information. Onc
 you are logged in you can create a database server by right clicking on your server group
 and clicking 'Register Server'.
 ![databaseRegister](./images/Database%20Register.png)
+<br>
 After clicking register, you will be shown a configuration pop-up. Name your database and then going into the
 connection tab. This is where you will enter the information from the Docker Compose file. The
 Host Name should be 'flow-pgdata', Port should be '5432', Username should be 'admin',

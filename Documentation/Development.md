@@ -2,8 +2,8 @@
 
 ## Overview
 
-This project is run with a node.js web server and in a docker container. This documentation will go over the creation of the
-environment in two sections - setting up the web server and setting up the api. Both need to be ran at the same
+This project is run with a node.js web server and is Dockerized. This documentation will go over the replication of the development
+environment using Docker. We were provided with a template that already had the Postgres database and API Dockerized, but not the frontend. This project has two sections - the web server and the api. Both need to be ran at the same
 time for a proper dev environment.
 
 This documentation expects that you are setting up the dev environment on a Windows computer.
@@ -29,7 +29,11 @@ Once you have cloned into the repository, you will see
 two projects - Cheetah.Sign.Api (The Back-end)
 and cheetahsign-webclient (The Front-end).
 
+### Installation Prerequisites
+
 In order to run the program, you will need the following programs already installed:
+
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/). This application lets you build and run your containerized applications.
 
 - IDE of your choice with the ability to docker compose (When writing this documentation, we opted to use Visual Studio Code
   with the Docker compose Extension)
@@ -42,11 +46,13 @@ In order to run the program, you will need the following programs already instal
 
 - Back-end:
   - .NET 8 SDK
-  - Docker Desktop
+  - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-## Front End Setup
+## Replicating via Docker
 
-### First Time Setup
+### First Time Frontend Setup
+
+At the time of this writing we have Dockerized the frontend as well, but there is a bug that causes the frontend to not take any API calls. There is an issue with how each of the Docker containers communicate with each other. To run the fully functional application, follow these steps to run your Vite development server from your IDE terminal first, and then run the Docker containers for the backend. To run the fully dockerized version continue to [Running the Backend](Development.md#building-the-docker-containers).
 
 Open up windows powershell or IDE terminal and navigate to the directory where the source code is stored. Navigate into the
 "cheetahsign-webclient" directory.
@@ -84,23 +90,24 @@ When making a new Vue file, ensure that you edit 'main.ts' to open your newly ma
 Vue file instead of the old one. You can do this by editing the directory from './App.vue' to the directory of your newly
 made vue file.
 
-## Back End Setup
+### Building The Docker Containers
 
-### Running the Backend
-
-Open your preferred IDE with the ability to compose. We are using VSCode so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now you should right click on the docker-compose.yml file and select "compose up".
+Open your preferred IDE with the ability to docker compose and your Docker Desktop application. We are using VSCode so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now you should right click on the docker-compose.yml file and select "compose up". This can take some time to build your containers.
 
 ![dockerCompose](./images/dockerCompose.png)
 
-Docker compose will spin up 3 images:
+You will know if the build was successful because your container names will appear in your terminal and
+Docker Compose will spin up 4 images:
 
-- cheetah.sign.api
 - pgdata
 - pgadmin
+- cheetah.sign.api
+- cheetahsign-webclient
 
+This is how it will appear on Docker Desktop:
 ![dockerContainer](./images/DockerContainer.png)
 
-### Setting Up Postgres (pgadmin)
+## Setting Up Postgres (pgadmin)
 
 The pgdata container will expose a specific port that you can use to setup your database server,
 so that the API can connect to the database. To setup your database, go to the port

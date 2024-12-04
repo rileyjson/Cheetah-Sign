@@ -28,6 +28,34 @@ As mentioned before, the application is Dockerized. This means the application i
 
 ## Deploying the Application
 
+### API Deployment:
+
+- Ensure appsettings.json is up-to-date
+- Configure some info like image name/tags etc
+- os linux
+- arch x64
+- run dotnet publish /t:PublishContainer
+- Containerize an app with dotnet publish - .NET | Microsoft Learn
+- push to Registry (for our case, AWS ECR)
+- Configure other server necessities
+- Configure/run postgres database server
+- Configure port forwarding to route traffic to the correct docker port
+- Configure secret environment variables injected via AWS parameter store
+- i.e. Database connection string
+  (later relevant)
+- ensure target server has SSL Certificates for HTTPS traffic
+- deploy new task service (for our case, using AWS ECS/EC2)
+
+### Web Deployment:
+
+- run "npm run build" or "vite build"
+- Building for Production | Vite
+- Configure proxy/rewrites on a static host vendor:
+- Render Example
+- Env Variables and Modes | Vite
+- Deploy to a static host
+- Deploying a Static Site | Vite
+
 ## Maintenance
 
 ## Troubleshooting

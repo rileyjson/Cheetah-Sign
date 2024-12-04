@@ -4,44 +4,60 @@
 
 Admins are in control of most of the functionality for Cheetah Sign. You have access to the admin side of the website, where
 you will be able to:
+
 - Upload Documents
 - View Uploaded Documents
+- Edit Documents for Signing
 - Send Documents to Clients
 - View the Status of Sent Documents
 
-
-
 ### Upload Documents
 
-In order to send a document to a client, you must first upload it. You can do this by using the upload form found at the
-bottom of the admin page. Select the "Browse..." button to open up your local file browser, and select the .PDF file that
+In order to send a document to a client, you must first upload it. You can do this by clicking the upload butotn found at the
+bottom of the admin home page.
+This button will take you to a
+modal pop-up with a browse files
+button. Select the button to open up your local file browser, and select the .PDF file that
 you would like to upload. Cheetah Sign has been designed and tested with .PDF files only, and it is best for to try
-and stick to those files. 
+and stick to those files.
 
-![UploadForm](./images/uploadButton.PNG)  
+![UploadForm](./images/UploadDocumentsButton.png)
+![UploadModal](./images/UploadModal.png)  
 ![FileBrowse](./images/fileSelection.PNG)
 
-After selecting your .PDF file, click the green upload button. The file should be uploaded to the server and can be used. After
+After selecting your .PDF file, click the blue upload button. The file should be uploaded to the server and can be used. After
 uploading the file, it is a good idea to reload the page.
 
 ### View Uploaded Documents
 
-All uploaded files can be found under the "Uploaded Documents" table found in the middle of the page. Each document is listed
+All uploaded files can be found under the "Uploaded Documents" table found in the middle of the Home page and Document Editor page. Each document is listed
 with the following attributes from left to right:
-- The Document Name
+
+- The document name
 - A text box for the client name
+- A text box for the client email
 - A view button
 - A send button
+- An edit button
+- A delete button
 
 ![UploadedDocumentsTable](./images/uploadedDocumentsTable.PNG)
 
-If you click on the "view" button, you will be sent to the server link for the PDF. You can simply view the file and return,
-or you can download the file. 
+Currently if you want to view a document, you can go to the Document Editor and click 'edit' to render the PDF.
+
+### Edit a Document
+
+You don't want to just send your plain PDF to your clients, correct?
+You want to have a spot where they
+can provide their e-signature. This is where the Document Editor comes in. With this feature you are able to specify where you want your text boxes to be on your PDF by providing x and y coordinates. Navigate to the Document Editor section of the website by using the nav bar. You will see input boxes for coordinates, and below that, a list of your documents. Click the 'edit' button to render your PDF on the web page. Add in your coordinates and click 'Submit Edit'. You should get a success message and a red box on your PDF to preview where the text box will be added. The Document should be saved to your document list with 'Edited' added to the beginning of the name. So, if you refresh your files, you should be able to view your new document with the added text box!
+
+![EditButton](./images/EditButton.png)
+![EditSuccess](./images/EditSuccess.png)
 
 ### Send Documents to Clients
 
 Looking at the table of uploaded documents, you are able to create a "Job". A "Job" is an instance of a document that contains
-a client and a status determining the state of the document. You can create a Job by filling out the client name text box and
+a client and a status determining the state of the document. You can create a Job by filling out the client email text box and
 selecting the "Send" button. You should reload the page after making a job.
 
 ![SendButton](./images/sendButton.PNG)
@@ -53,7 +69,7 @@ button. This is helpful when sending a single document to several clients, such 
 
 All sent Jobs can be found at the top of the page. It details the document name, the client, and the status of the job. If
 a document has been signed by the client, it will be marked with the status "signed". Otherwise, it will be marked with the
-status "sent". 
+status "sent".
 
 ![SentDocumentsTable](./images/sentDocumentsTable.PNG)
 
@@ -63,20 +79,21 @@ list of uploaded documents.
 ## Client
 
 As a client, you will have the ability to:
+
 - View Documents sent to you
 - Sign Documents
 
 ### View Documents sent to you
 
-At the bottom of the page is the client section. This is where jobs that have been sent out can be found. It contains a dropdown
-menu listing off all currently prepared jobs. The selection lists the document name and the client, so you can choose which
-one applies to you.
+As of now we're using Ethereal Email for testing our document sending. Ethereal provides temporary, disposable email addresses that are used for testing purposes rather than for permanent or personal communication. So, we are able to 'send' emails with a link to a document and view them using Ethereal.
 
-![SentJobsList](./images/sentJobsList.PNG)
+Once you access this link, you will be taken to the client signing page. This will render your PDF and have a 'sign' button.
+
+![LinkInEmail](./images/linkInEmail.png)
+![ClientSignPage](./images/ClientSigningPage.png)
 
 ### Sign Documents
 
-After selecting a document, a text box will appear with a sign button. Simply type in your name and select the "Sign" button
-to sign the document!
+To sign a document you just input your name on the PDF and then click the sign button! This button updates the status of the document to signed. You should receive a success message indicating you have signed the PDF.
 
-![SigningDocument](./images/signingDocument.PNG)
+![SignedDocument](./images/SignedDocument.png)

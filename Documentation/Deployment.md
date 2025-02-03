@@ -69,3 +69,5 @@ This will display all the containers that are running
 - docker-compose logs
 
 This will display logs for all images defined in docker-compose.yml.
+The errors that you may have run into are typically found in these logs, or can be found displayed in Docker when you select
+the service that the error is happening in.

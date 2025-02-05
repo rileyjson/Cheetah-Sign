@@ -10,6 +10,7 @@ you will be able to:
 - Edit Documents for Signing
 - Send Documents to Clients
 - View the Status of Sent Documents
+- View the Audit Trail of Sent Documents
 
 ### Upload Documents
 
@@ -64,7 +65,7 @@ with the text box added will be saved.
 
 Looking at the table of uploaded documents, you are able to create a "Job". A "Job" is an instance of a document that contains
 a client and a status determining the state of the document. You can create a Job by filling out the client email text box and
-selecting the "Send" button. 
+selecting the "Send" button.
 
 ![SendButton](./images/sendButton.PNG)
 
@@ -73,8 +74,8 @@ button. This is helpful when sending a single document to several clients, such 
 
 ### View the status of sent documents
 
-All sent Jobs can be found in the "Jobs" page, navigated to from the navbar. The jobs detail the document name, the client, 
-and the status of the job. If a document has been signed by the client, it will be marked with the status "signed". Otherwise, 
+All sent Jobs can be found in the "Jobs" page, navigated to from the navbar. The jobs detail the document name, the client,
+and the status of the job. If a document has been signed by the client, it will be marked with the status "signed". Otherwise,
 it will be marked with the status "sent".
 
 ![SentDocumentsTable](./images/sentDocumentsTable.PNG)
@@ -91,8 +92,8 @@ As a client, you will have the ability to:
 
 ### View Documents sent to you
 
-As of now we're using Ethereal Email for testing our document sending. Ethereal provides temporary, disposable email 
-addresses that are used for testing purposes rather than for permanent or personal communication. So, we are able to 
+As of now we're using Ethereal Email for testing our document sending. Ethereal provides temporary, disposable email
+addresses that are used for testing purposes rather than for permanent or personal communication. So, we are able to
 'send' emails with a link to a document and view them using Ethereal.
 
 Once you access this link, you will be taken to the client signing page. This will render your PDF and have a 'sign' button.
@@ -102,7 +103,7 @@ Once you access this link, you will be taken to the client signing page. This wi
 
 ### Sign Documents
 
-To sign a document you just input your name on the PDF and then click the sign button! This button updates the status 
+To sign a document you just input your name on the PDF and then click the sign button! This button updates the status
 of the document to signed. You should receive a success message indicating you have signed the PDF.
 
 ![SignedDocument](./images/SignedDocument.png)

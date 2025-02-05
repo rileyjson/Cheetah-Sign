@@ -25,8 +25,7 @@ you run into any access errors you can get assistance by reaching out to
 riley.jamison@bsu.edu.
 
 Once you have cloned into the repository, you will see
-two projects - Cheetah.Sign.Api (The Back-end)
-and cheetahsign-webclient (The Front-end).
+three project folders - Cheetah.Sign.Api (The Back-end), cheetahsign-clientside (Signing Page), and cheetahsign-webclient (The Front-end).
 
 ### Installation Prerequisites
 
@@ -53,6 +52,13 @@ In order to run the program, you will need the following programs already instal
 
 Open your preferred IDE with the ability to docker compose and your Docker Desktop application. We are using VSCode so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now you should right click on the docker-compose.yml file and select "compose up". This can take some time to build your containers.
 
+**Note: If this fails with an authentication error, you might have to login to your Docker account in the Visual Studio Code terminal to connect them.**
+
+The command is:
+docker login -u \<username\>
+
+You will then be asked for your Docker password which you can't see as you type it in.
+
 ![dockerCompose](./images/dockerCompose.png)
 
 You will know if the build was successful because your container names will appear in your terminal and
@@ -62,21 +68,19 @@ Docker Compose will spin up 4 images:
 - sign-pgadmin
 - sign-api
 - bsucheetahsign-cheetahsign-webclient-1
+- bsucheetahsign-cheetahsign-clientside-1
 
 This is how it will appear on Docker Desktop:
 ![dockerContainer](./images/DockerContainer.png)
 
 ### Editing the Frontend
 
-Everything relating to the front end will be found in the 'cheetahsign-webclient' directory. By default, the app will run
-the App.vue file.
+Everything relating to the front end for administrators will be found in the 'cheetahsign-webclient' directory. For the signing page, that is found in the 'cheetahsign-clientside' directory. By default, the app will run their respective App.vue files.
+App.vue is the template page that all of our components inherit from. This also contains our view router to allow for navigation between different parts of the website.
 
-App.vue is a file that inherits HelloWorld.vue, which inherits DailyForecast.vue. You can modify these Vue files to
-begin work, or you may make a new Vue file.
+Vue follows a component-based architecture. So, everything we make on the frontend is based around our components. For example, each of our different sections in our webpage is a separate component. Also, the modals we use on 3 of the section are all one component! We don't have to make 3 separate modals in each of these Vue files. We make one modal and each component inherits the modal component into their own Vue file. This is how you use Vue to work with the UI.
 
-When making a new Vue file, ensure that you edit 'main.ts' to open your newly made
-Vue file instead of the old one. You can do this by editing the directory from './App.vue' to the directory of your newly
-made vue file.
+Another piece of the frontend puzzle are the API calls that are made to talk to our backend. The way this is done falls into our 'sdk' folder in the webclient directory. Each of the classes located in these 'client' files contain a variety of asynchronous methods that we can call in our Vue components. If they're HTTP get requests, they just contain the endpoint to go to on the backend. If they're an HTTP post request, they also will contain a body to be sent.
 
 ### Editing the Backend
 
@@ -96,12 +100,12 @@ you can access the application. Navigate to the URL http://localhost:8080/
 
 This URL is given to you in the terminal of your
 Docker container on Docker Desktop after running 'Compose Up'. To test if the application is running
-correctly, attempt to upload a document. After uploading click the 'refresh files' buttons. If the
+correctly, attempt to upload a document. If the
 list under 'Uploaded Documents' populates with your file, your enviroment is setup correctly.
 
 ## Project & Folder Structure
 
-### Frontend (cheetahsign-webclient)
+### Frontend (cheetahsign-webclient & cheetahsign-clientside)
 
 - Components
   <br>

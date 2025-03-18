@@ -6,6 +6,7 @@ Admins are in control of most of the functionality for Cheetah Sign. You have ac
 you will be able to:
 
 - Upload Documents
+- Record Client Profiles
 - View Uploaded Documents
 - Edit Documents for Signing
 - Send Documents to Clients
@@ -61,16 +62,32 @@ text box to be placed.
 Once you've placed your text box, select the build button in the upper right corner to finalize it! A copy of your document
 with the text box added will be saved.
 
+### Recording a Client Profile
+
+You are able to record the name and email of a client. This is useful to keep track of the information, as well as sending
+documents to the same recipient multiple times. In order to create a client profile, navigate to the "Clients" page and 
+click the "Add New Client" button.
+
+![AddNewClient](./images/addNewClientButton.png)
+
+A modal should open where you are able to enter the client's name and email. When entered, the client will appear in the table,
+signalling that the client has been recorded. A recorded client can also be deleted as well.
+
+![AddNewClientModal](./images/addNewClientModal.png)
+
 ### Send Documents to Clients
 
 Looking at the table of uploaded documents, you are able to create a "Job". A "Job" is an instance of a document that contains
-a client and a status determining the state of the document. You can create a Job by filling out the client email text box and
-selecting the "Send" button.
+a client and a status determining the state of the document. You can create a Job by selecting the "send" button.
 
 ![SendButton](./images/sendButton.PNG)
 
-You can create as many Jobs as you'd like from a single document by continuing to select the Send
-button. This is helpful when sending a single document to several clients, such as an NDA to a new team of hires.
+When you've selected the send button, it will open up a modal for sending the document. You have two options for sending the document:
+you can enter the client's information directly, OR you can select a client that you created in the client menu.
+You should select the "send" button that corresponds to the option you chose. This will use the information you've entered
+to send the document to the client.
+
+![SendDocumentModal](./images/sendDocumentModal.png)
 
 ### View the status of sent documents
 

@@ -68,7 +68,6 @@ Docker Compose will spin up 4 images:
 - sign-pgadmin
 - sign-api
 - bsucheetahsign-cheetahsign-webclient-1
-- bsucheetahsign-cheetahsign-clientside-1
 
 This is how it will appear on Docker Desktop:
 ![dockerContainer](./images/DockerContainer.png)
@@ -101,7 +100,7 @@ you can access the application. Navigate to the URL http://localhost:8080/
 This URL is given to you in the terminal of your
 Docker container on Docker Desktop after running 'Compose Up'. To test if the application is running
 correctly, attempt to upload a document. If the
-list under 'Uploaded Documents' populates with your file, your enviroment is setup correctly.
+list under 'Uploaded Documents' populates with your file, your environment is set up correctly.
 
 ## Project & Folder Structure
 
@@ -133,7 +132,7 @@ list under 'Uploaded Documents' populates with your file, your enviroment is set
 
 - Contexts
   <br>
-  This is another piece of our Microsoft Entity Framework setup. This folder contains our AppDbContext, which is a class that serves as a bridge between your application and the database. It is responsible for managing your database tables and data.
+  This is another piece of our Microsoft Entity Framework setup. This folder contains our AppDbContext, which is a class that serves as a bridge between your application and the database. It is responsible for managing your database tables and data. This also contains the database fixture that is used in testing.
 
 ### Important Files
 

@@ -61,8 +61,8 @@ You will then be asked for your Docker password. (you will not see your password
 
 ![dockerCompose](./images/dockerCompose.png)
 
-You will know if the build was successful because your container names will appear in your terminal and
-Docker Compose will spin up 4 images:
+You will know if the build was successful when your container names appear in your terminal and
+Docker Compose spins up 4 images:
 
 - sign-pgdata
 - sign-pgadmin
@@ -78,7 +78,7 @@ Everything relating to the frontend for administrators will be found in the 'che
 
 Vue follows a component-based architecture. So, everything we make on the frontend is based around our components. For example, each of our different sections in our webpage is a separate component. Also, the modals we use on 3 of the sections are all one component! We don't have to make 3 separate modals in each of these Vue files. We make one modal and each component inherits the modal component into their own Vue file. This is how you use Vue to work with the UI.
 
-Another piece of the frontend puzzle are the API calls that are made to talk to our backend. The way this is done falls into our 'sdk' folder in the webclient directory. Each of the classes located in these 'client' files contain a variety of asynchronous methods that we can call in our Vue components. If they're HTTP GET requests, they just contain the endpoint to talk to the backend. If they're an HTTP post request, they also will contain a body to be sent. Like if you were sending a file to the backend, so it could then be saved to the database.
+Another piece of the frontend puzzle are the API calls that are made to talk to our backend. The way this is done falls into our 'sdk' folder in the webclient directory. Each of the classes located in these 'client' files contain a variety of asynchronous methods that we can call in our Vue components. If they're HTTP GET requests, they just contain the endpoint to talk to the backend. If they're an HTTP POST request, they also will contain a body to be sent. Like if you were sending a file to the backend, so it could then be saved to the database.
 
 ### Editing the Backend
 

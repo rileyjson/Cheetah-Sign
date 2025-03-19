@@ -102,7 +102,7 @@ list under 'Uploaded Documents' populates with your file, your environment is se
 
 ## Project & Folder Structure
 
-### Frontend (cheetahsign-webclient & cheetahsign-clientside)
+### Frontend (cheetahsign-webclient)
 
 - Components
   <br>

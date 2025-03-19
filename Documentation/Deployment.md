@@ -64,6 +64,7 @@ As mentioned before, the application is Dockerized. This means the application i
 Some of the main issues that could come up are usually related to Docker Compose. There are a few commands you can use in the terminal to troubleshoot those issues.
 
 - docker login -u
+  
 When you first try to run the application with Docker, you will probably get an authentication error. This means your IDE and Docker Desktop are not connected. You must login to Docker Desktop from your IDE to fix this problem. 'docker login -u' will let you enter your Docker username and password. 
 
 - docker ps

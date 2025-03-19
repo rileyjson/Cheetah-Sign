@@ -5,7 +5,7 @@
 This project is run with a node.js web server and is fully Dockerized. This documentation will go over the replication of the development
 environment using Docker. We were provided with a template that already had the Postgres database and API Dockerized, but we had to Dockerize the frontend ourselves.
 
-This documentation expects that you are setting up the dev environment on a Windows computer.
+This documentation goes through setting up your development enviroment on Windows, but it should be the same for MacOS.
 If any problems occur during this process you can email riley.jamison@bsu.edu for assistance.
 
 ## Prerequisites
@@ -25,11 +25,11 @@ you run into any access errors you can get assistance by reaching out to
 riley.jamison@bsu.edu.
 
 Once you have cloned into the repository, you will see
-three project folders - Cheetah.Sign.Api (The Back-end), cheetahsign-clientside (Signing Page), and cheetahsign-webclient (The Front-end).
+two project folders - Cheetah.Sign.Api (backend) and cheetahsign-webclient (frontend).
 
 ### Installation Prerequisites
 
-In order to run the program, you will need the following programs already installed:
+In order to run the program, you will need the following programs installed:
 
 - Install [Docker Desktop](https://www.docker.com/products/docker-desktop/). This application lets you build and run your containerized applications.
 
@@ -50,14 +50,14 @@ In order to run the program, you will need the following programs already instal
 
 ### Building The Docker Containers
 
-Open your preferred IDE with the ability to docker compose and your Docker Desktop application. We are using VSCode so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now you should right click on the docker-compose.yml file and select "compose up". This can take some time to build your containers.
+Open your preferred IDE with the ability to docker compose and your Docker Desktop application. We are using VSCode, so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now you should right click on the docker-compose.yml file and select "compose up". This can take some time to build your containers.
 
 **Note: If this fails with an authentication error, you might have to login to your Docker account in the Visual Studio Code terminal to connect them.**
 
 The command is:
 docker login -u \<username\>
 
-You will then be asked for your Docker password which you can't see as you type it in.
+You will then be asked for your Docker password. (you will not see your password as you type it in)
 
 ![dockerCompose](./images/dockerCompose.png)
 
@@ -74,23 +74,21 @@ This is how it will appear on Docker Desktop:
 
 ### Editing the Frontend
 
-Everything relating to the front end for administrators will be found in the 'cheetahsign-webclient' directory. For the signing page, that is found in the 'cheetahsign-clientside' directory. By default, the app will run their respective App.vue files.
-App.vue is the template page that all of our components inherit from. This also contains our view router to allow for navigation between different parts of the website.
+Everything relating to the frontend for administrators will be found in the 'cheetahsign-webclient' directory. For now, the page where users will sign documents lies in this directory as well. App.vue is the template page that all of our components inherit from. This also contains our vue router to allow for navigation between different parts of the application.
 
-Vue follows a component-based architecture. So, everything we make on the frontend is based around our components. For example, each of our different sections in our webpage is a separate component. Also, the modals we use on 3 of the section are all one component! We don't have to make 3 separate modals in each of these Vue files. We make one modal and each component inherits the modal component into their own Vue file. This is how you use Vue to work with the UI.
+Vue follows a component-based architecture. So, everything we make on the frontend is based around our components. For example, each of our different sections in our webpage is a separate component. Also, the modals we use on 3 of the sections are all one component! We don't have to make 3 separate modals in each of these Vue files. We make one modal and each component inherits the modal component into their own Vue file. This is how you use Vue to work with the UI.
 
-Another piece of the frontend puzzle are the API calls that are made to talk to our backend. The way this is done falls into our 'sdk' folder in the webclient directory. Each of the classes located in these 'client' files contain a variety of asynchronous methods that we can call in our Vue components. If they're HTTP get requests, they just contain the endpoint to go to on the backend. If they're an HTTP post request, they also will contain a body to be sent.
+Another piece of the frontend puzzle are the API calls that are made to talk to our backend. The way this is done falls into our 'sdk' folder in the webclient directory. Each of the classes located in these 'client' files contain a variety of asynchronous methods that we can call in our Vue components. If they're HTTP GET requests, they just contain the endpoint to talk to the backend. If they're an HTTP post request, they also will contain a body to be sent. Like if you were sending a file to the backend, so it could then be saved to the database.
 
 ### Editing the Backend
 
-Everything relating to the back end will be found in the Cheetah.Sign.Api directory. Primarily, you will be editing the
-files within the Endpoints directory, where the HTTP POST and GET requests will be sent.
+Everything relating to the backend will be found in the Cheetah.Sign.Api directory. Primarily, you will be editing the files within the Endpoints directory, where the HTTP POST and GET requests will be sent.
 
 Use this directory to edit the current endpoints or create new files with new endpoints. With the creation of new endpoints,
 ensure that you add the new endpoints to the 'Program.cs'.
 
 If you want to edit the database, refer to the Contexts folder with the file [AppDbContext](https://sbelialov.medium.com/quick-and-easy-dbcontext-setup-in-net-70e2211be8f4). This file is used to define
-your database tables and data.
+your database tables and data. Also, you can define and edit tables within the 'sign-pgadmin' port on Docker (you can find the login info in the docker compose file). Your tables should automatically be created when you run the application. This are based off our latest database migrations found in the 'migrations' folder.
 
 ## Accessing the Application & How to Test
 

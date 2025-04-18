@@ -9,18 +9,19 @@ People presented to:
 - Joe
 - Isaiah King
 
-![LeahStrong]("./symposium-images/Leah-Strong.jpg")
+![LeahStrong](./symposium-images/Leah-Strong.jpg)
 Leah Strong
 
-![Nini]("./symposium-images/Nini-and-Mae.jpg")
+![Nini](./symposium-images/Nini-and-Mae.jpg)
 Nini Andis & Mae Mottern
 
-![Beth]("./symposium-images/Beth.jpg")
+![Beth](./symposium-images/Beth.jpg)
 Beth
 
-![IsaiahKing]("./symposium-images/Isaiah-King.jpg")
+![IsaiahKing](./symposium-images/Isaiah-King.jpg)
 Isaiah King
 
+<br>
 Levi: The student symposium was a very cool experience! I appreciated the chance to interact with other students
 about their projects and to see what efforts others have put into their own projects. The symposium has a primary
 purpose in helping students learn how to present their findings in the most effective way possible, to both individuals

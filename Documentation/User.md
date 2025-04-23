@@ -6,12 +6,13 @@ Admins are in control of most of the functionality for Cheetah Sign. You have ac
 you will be able to:
 
 - Upload Documents
-- Record Client Profiles
 - View Uploaded Documents
-- Edit Documents for Signing
+- Build Documents for Signing
+- Add Client Profiles
 - Send Documents to Clients
 - View the Status of Sent Documents
 - View the Audit Trail of Sent Documents
+- View and Download Signed Documents
 
 ### Upload Documents
 
@@ -19,86 +20,96 @@ In order to send a document to a client, you must first upload it. You can do th
 top of the "My Documents" page.
 This button will take you to a
 modal pop-up with a browse files
-button. Select the button to open up your local file browser, and select the .PDF file that
-you would like to upload. Cheetah Sign has been designed and tested with .PDF files only, and it is best for to try
-and stick to those files.
+button. Click the button or upload icon to open up your file browser, and select the PDF file that you would like to upload. Cheetah Sign currently only supports PDF files.
 
 ![UploadForm](./images/UploadDocumentsButton.png)
-![UploadModal](./images/UploadModal.png)  
-![FileBrowse](./images/fileSelection.PNG)
+![UploadModal](./images/UploadModal.png)
 
-After selecting your .PDF file, click the blue upload button. The file should be uploaded to the server and can be used. After
-uploading the file, it is a good idea to reload the page.
+After selecting your PDF file, click the blue upload button. You should receieve a notification that the file has been uploaded to the server, and is ready to be built. The next step is to build this document for sending! You can either navigate to the Document Builder through the Toast notification, or click one of the two Document Builder buttons.
+![DocumentBuilderButton](./images/DocumentBuilderButton.png)
+![DocumentUploadToast](./images/DocumentUploadToast.png)
 
-### View Uploaded Documents
+### After Uploading
 
-All uploaded files can be found under the "My Documents" table found in the middle of the Home page and Document Editor page. Each document is listed
+All uploaded files can be found in the "My Documents" section of the application and in the 'Documents' section of the Document Builder page. Each document is listed
 with the following attributes from left to right:
 
-- The document name
-- A text box for the client name
-- A text box for the client email
-- A send button
-- A view button
-- A delete button
+- Document Name w/ a tag indicating if it has been built (Can filter alphabetically)
+- Build Template Button
+- Send Document Button
+- View Document Button
+- Delete Document Button
+- Upload Date
 
-![UploadedDocumentsTable](./images/uploadedDocumentsTable.PNG)
+![UploadedDocumentsTable](./images/UploadDocumentsTable.PNG)
 
-Currently, if you want to view a document, you can go to the Document Editor and click 'edit' to render the PDF.
+We will go though each of these core actions.
 
-### Edit a Document
+### Introducing Cheetah Build
 
-Editing a document allows you to place a text box, indicating where you would like the user to input their information.
-After you have uploaded a sample document, navigate to the "Document Builder" tab.
+Building a document with Cheetah Build allows you to place text boxes on a PDF, indicating where you would like the user to input their information.
+After you have uploaded a base document, navigate to the "Document Builder" tab in one of the three ways mentioned before.
 
-![NavToDocBuilder](./images/navToDocBuilder.png)
-
-Once here, you'll be able to view the document builder! The document builder lists off your documents on the left. Click on a
-document to pull it up on the right. From there, you can click directly on the document to select where you would like the
-text box to be placed.
+Once here, you'll be able to view the Cheetah Document Builder! The Document Builder contains two tabs - 'Edit' and
+'Documents'. Under 'Documents' you can select one of the documents you have previously uploaded and it will be rendered in the gray zone. Under 'Edit' you will be presented with the name of your document, the number of pages, and your options of input types.
 
 ![DocumentBuilderExample](./images/documentBuilderExample.png)
+![BuilderInputsExample](./images/BuilderInputs.png)
 
-Once you've placed your text box, select the build button in the upper right corner to finalize it! A copy of your document
-with the text box added will be saved.
+### Cheetah Build Drag and Drop
+
+To build a document in Cheetah Build, we provided a drag and drop functionality to give admins flexibility in their building process. All you have to do is select a document you want to build, drag one of the input types you want, and drop it onto your rendered page. You will notice you also have an option to resize the width and height of your dropped input box - very flexible. And don't worry, if you make a mistake, you can reposition your dropped box or even undo/refresh them.
+
+![CheetahBuildGif](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXNocWZhN3RlZXNzMzN2cXgwd2kzNjZoZ2txNm5xYWc0dXNoY2o5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0XkX4HG0RXSMVIjweA/giphy.gif)
 
 ### Recording a Client Profile
 
-You are able to record the name and email of a client. This is useful to keep track of the information, as well as sending
-documents to the same recipient multiple times. In order to create a client profile, navigate to the "Clients" page and 
-click the "Add New Client" button.
+Before we want to send out built document, we might want to save a client we believe we will be using often. You are able to record the name, email, phone, and address of a client. This is useful to keep track of the information, as well as sending
+documents to the same recipient multiple times. In order to create a client profile, navigate to the "Clients" page and
+click the "Add Client" button.
 
-![AddNewClient](./images/addNewClientButton.png)
+![AddNewClient](./images/AddNewClientButton.png)
 
-A modal should open where you are able to enter the client's name and email. When entered, the client will appear in the table,
-signalling that the client has been recorded. A recorded client can also be deleted as well.
+A modal should open where you are able to enter the client's information. When entered, the client will appear in the table,
+signalling that the client has been recorded. A recorded client can be deleted as well.
 
-![AddNewClientModal](./images/addNewClientModal.png)
+### Viewing Documents
+
+After uploading a document, you can select the view button on the home page to preview the document. Even better is that you can preview a document that you have just built using this feature. So, just to make sure you're happy with the built version, take a look at it before sending!
+
+![viewBuilt](./images/ViewBuiltDocument.png)
 
 ### Send Documents to Clients
 
-Looking at the table of uploaded documents, you are able to create a "Job". A "Job" is an instance of a document that contains
-a client and a status determining the state of the document. You can create a Job by selecting the "send" button.
+Finally the time has come - actually sending your built document to a recipient! Looking at the home page which contains your table of uploaded documents, you are able to create a "Job". A "Job" is an instance of a document that contains
+a client and a status determining the state of the document. You can create a Job by selecting the "Send" button and either selecting one of your existing clients, or entering their name and email.
 
-![SendButton](./images/sendButton.PNG)
+![SendButton](./images/SendButton.PNG)
+![SendModal](./images/SendModal.png)
 
-When you've selected the send button, it will open up a modal for sending the document. You have two options for sending the document:
-you can enter the client's information directly, OR you can select a client that you created in the client menu.
-You should select the "send" button that corresponds to the option you chose. This will use the information you've entered
-to send the document to the client.
+### After Sending
 
-![SendDocumentModal](./images/sendDocumentModal.png)
+All sent documents can be found in the "Jobs" section of the application. Each Job is listed
+with the following attributes from left to right:
 
-### View the status of sent documents
+- Audit Trail Button
+- Job Name (Can filter alphabetically)
+- View Signed Job Button
+- Download Signed Job Button
+- Delete Job Button
+- Recipients (Can filter alphabetically)
+- Status
 
-All sent Jobs can be found in the "Jobs" page, navigated to from the navbar. The jobs detail the document name, the client,
-and the status of the job. If a document has been signed by the client, it will be marked with the status "signed". Otherwise,
-it will be marked with the status "sent".
+Each job details the document name, the recipient,
+and the status of the job. Each job also provides an audit trail showing the lifecycle of the sent document. If a document has been signed by the client, it will be marked with a "Signed" green tag. Otherwise,
+it will be marked with a "Sent" orange tag.
 
-![SentDocumentsTable](./images/sentDocumentsTable.PNG)
+![SentDocumentsTable](./images/SentDocumentsTable.PNG)
+![AuditTrail](./images/AuditTrail.png)
 
-Each job in the table also has its own view button, allowing for you to view the document, similar to the view button on the
-list of uploaded documents.
+Each job in the table also has its own view button and download button. This allows for you to view or download the signed document when it is finished.
+
+![SignedDocPreview](./images/SignedDocumentPreview.png)
 
 ## Client
 
@@ -107,20 +118,12 @@ As a client, you will have the ability to:
 - View Documents sent to you
 - Sign Documents
 
-### View Documents sent to you
+### Client Viewing and Signing Documents
 
-As of now we're using Ethereal Email for testing our document sending. Ethereal provides temporary, disposable email
-addresses that are used for testing purposes rather than for permanent or personal communication. So, we are able to
-'send' emails with a link to a document and view them using Ethereal.
+Once an admin decides to send a built document to a client, the client will receive the link to the document in their email.
 
-Once you access this link, you will be taken to the client signing page. This will render your PDF and have a 'sign' button.
+![emailedDoc](./images/EmailedDocument.png)
 
-![LinkInEmail](./images/linkInEmail.png)
-![ClientSignPage](./images/ClientSigningPage.png)
+After following this link, clients will be presented with the built document containing all text fields to input the requested information. To fill out the document, they will use a stepper component that contains text boxes labeled with the desired input. On the last step they will see a 'Finish' button. After clicking this button, a modal will appear telling them 'Thanks for signing!' with an option to download their signed document. Since the signing is complete, Admins should now be able to view and download the signed document!
 
-### Sign Documents
-
-To sign a document you just input your name on the PDF and then click the sign button! This button updates the status
-of the document to signed. You should receive a success message indicating you have signed the PDF.
-
-![SignedDocument](./images/SignedDocument.png)
+![SigningExample](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjB5aGtlZjYwZTkyeGF5em0yenZjbXlqcjdhN3R6bzc0b2tkamFlMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uDBLLOmgdgDf5RzUs7/giphy.gif)

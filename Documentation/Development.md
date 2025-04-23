@@ -2,11 +2,10 @@
 
 ## Overview
 
-This project is run with a node.js web server and is fully Dockerized. This documentation will go over the replication of the development
-environment using Docker. We were provided with a template that already had the Postgres database and API Dockerized, but we had to Dockerize the frontend ourselves.
+This project uses a Node.js backend and is fully containerized with Docker. You can run the environment with a single command using Docker Compose, or right-clicking the Docker Compose file with the VS Code Docker Extension. This documentation will go over the replication of the development
+environment using Docker.
 
-This documentation goes through setting up your development enviroment on Windows, but it should be the same for MacOS.
-If any problems occur during this process you can email riley.jamison@bsu.edu for assistance.
+If any problems occur during this process you can email rileyjamison2001@gmail.com for assistance.
 
 ## Prerequisites
 
@@ -22,19 +21,19 @@ link you can use to clone into the repository.
 After copying the link, open your terminal or IDE and cd into your directory
 of choice. Once in your directory, paste the link to clone the repository. If
 you run into any access errors you can get assistance by reaching out to
-riley.jamison@bsu.edu.
+gabe.chandler@trustasc.com.
 
 Once you have cloned into the repository, you will see
 two project folders - Cheetah.Sign.Api (backend) and cheetahsign-webclient (frontend).
 
 ### Installation Prerequisites
 
-In order to run the program, you will need the following programs installed:
+In order to run the application, you will need the following programs installed:
 
-- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/). This application lets you build and run your containerized applications.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/). This software lets you build and run your containerized applications.
 
-- IDE of your choice with the ability to docker compose (When writing this documentation, we opted to use Visual Studio Code
-  with the Docker compose Extension)
+- IDE of your choice (we opted to use Visual Studio Code
+  with the Docker Compose Extension)
 
 - Front-end:
 
@@ -50,7 +49,7 @@ In order to run the program, you will need the following programs installed:
 
 ### Building The Docker Containers
 
-Open your preferred IDE with the ability to docker compose and your Docker Desktop application. We are using VSCode, so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now you should right click on the docker-compose.yml file and select "compose up". This can take some time to build your containers.
+Open your preferred IDE and your Docker Desktop application. We are using VSCode, so you will want to install the [Docker Extension](https://code.visualstudio.com/docs/containers/overview) to run it in the way presented. Now, right click on the docker-compose.yml file and select "compose up" (you can also run this command in the terminal). This can take some time to build your containers.
 
 **Note: If this fails with an authentication error, you might have to login to your Docker account in the Visual Studio Code terminal to connect them.**
 
@@ -74,11 +73,11 @@ This is how it will appear on Docker Desktop:
 
 ### Editing the Frontend
 
-Everything relating to the frontend for administrators will be found in the 'cheetahsign-webclient' directory. For now, the page where users will sign documents lies in this directory as well. App.vue is the template page that all of our components inherit from. This also contains our vue router to allow for navigation between different parts of the application.
+Everything relating to the frontend for administrators will be found in the 'cheetahsign-webclient' directory. For now, the page where users will sign documents lies in this directory as well. DefaultLayout.vue is the template page that all of our components inherit from except for the Document Builder and Signing Page. This also contains our vue router to allow for navigation between different parts of the application.
 
-Vue follows a component-based architecture. So, everything we make on the frontend is based around our components. For example, each of our different sections in our webpage is a separate component. Also, the modals we use on 3 of the sections are all one component! We don't have to make 3 separate modals in each of these Vue files. We make one modal and each component inherits the modal component into their own Vue file. This is how you use Vue to work with the UI.
+Vue follows a component-based architecture. So, everything we make on the frontend is based around our components. Each of our different sections in our webpage is a separate component. For example, if you were to need an upload form for 2 different parts of the application, you wouldn't need to make 2 separate forms in each of the Vue files. Instead, you could make one upload form and each component could inherit it into their own Vue file. This is how you use Vue to work with the UI.
 
-Another piece of the frontend puzzle are the API calls that are made to talk to our backend. The way this is done falls into our 'sdk' folder in the webclient directory. Each of the classes located in these 'client' files contain a variety of asynchronous methods that we can call in our Vue components. If they're HTTP GET requests, they just contain the endpoint to talk to the backend. If they're an HTTP POST request, they also will contain a body to be sent. Like if you were sending a file to the backend, so it could then be saved to the database.
+Another piece of the frontend puzzle are the API calls that are made to talk to our backend. The way this is done falls into our 'sdk' folder in the webclient directory. Each of the classes located in these 'client' files contain a variety of asynchronous methods that we can call in our Vue components. If they're HTTP GET requests, they just contain the endpoint to talk to the backend. If they're an HTTP POST request, they also will contain a body to be sent. For example, if you were sending a file to the backend, you would define a body of Form Data that will be sent with your POST request. The backend would receieve it, and it could then be saved to the database.
 
 ### Editing the Backend
 
@@ -88,17 +87,16 @@ Use this directory to edit the current endpoints or create new files with new en
 ensure that you add the new endpoints to the 'Program.cs'.
 
 If you want to edit the database, refer to the Contexts folder with the file [AppDbContext](https://sbelialov.medium.com/quick-and-easy-dbcontext-setup-in-net-70e2211be8f4). This file is used to define
-your database tables and data. Also, you can define and edit tables within the 'sign-pgadmin' port on Docker (you can find the login info in the docker compose file). Your tables should automatically be created when you run the application. This are based off our latest database migrations found in the 'migrations' folder.
+your database tables and data and has to coorelate with our actual database server setup. You can define and edit our Postgres database server tables within the 'sign-pgadmin' port on Docker (you can find the login info in the docker compose file under pg-admin). Your tables should automatically be created when you run the application. These are based off our latest database migrations found in the 'migrations' folder.
 
 ## Accessing the Application & How to Test
 
 Once you have Docker Desktop running the containers for the API, Postgres, and the web client,
 you can access the application. Navigate to the URL http://localhost:8080/
 
-This URL is given to you in the terminal of your
-Docker container on Docker Desktop after running 'Compose Up'. To test if the application is running
+To test if the application is running
 correctly, attempt to upload a document. If the
-list under 'Uploaded Documents' populates with your file, your environment is set up correctly.
+table populates with your file, your environment is set up correctly.
 
 ## Project & Folder Structure
 
@@ -137,4 +135,4 @@ list under 'Uploaded Documents' populates with your file, your environment is se
 - Program.cs & appsettings.json
   <br>
   These files are where we configure our connections to our database, enviroment variables, our HTTP request pipeline,
-  automatic database setup, etc.
+  automatic database setup, and define our endpoint classes, etc.

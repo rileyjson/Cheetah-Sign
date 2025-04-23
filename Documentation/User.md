@@ -41,7 +41,7 @@ with the following attributes from left to right:
 - Delete Document Button
 - Upload Date
 
-![UploadedDocumentsTable](./images/UploadDocumentsTable.PNG)
+![UploadedDocumentsTable](./images/UpDocumentsTable.png)
 
 We will go though each of these core actions.
 

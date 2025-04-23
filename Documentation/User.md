@@ -104,7 +104,7 @@ Each job details the document name, the recipient,
 and the status of the job. Each job also provides an audit trail showing the lifecycle of the sent document. If a document has been signed by the client, it will be marked with a "Signed" green tag. Otherwise,
 it will be marked with a "Sent" orange tag.
 
-![SentDocumentsTable](./images/SentDocumentsTable.PNG)
+![SentDocumentsTable](./images/DocumentsSentTable.png)
 ![AuditTrail](./images/AuditTrail.png)
 
 Each job in the table also has its own view button and download button. This allows for you to view or download the signed document when it is finished.

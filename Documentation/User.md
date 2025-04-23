@@ -68,7 +68,7 @@ Before we want to send out built document, we might want to save a client we bel
 documents to the same recipient multiple times. In order to create a client profile, navigate to the "Clients" page and
 click the "Add Client" button.
 
-![AddNewClient](./images/AddNewClientButton.png)
+![AddNewClient](./images/ClientButtonAdd.png)
 
 A modal should open where you are able to enter the client's information. When entered, the client will appear in the table,
 signalling that the client has been recorded. A recorded client can be deleted as well.

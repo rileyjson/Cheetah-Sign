@@ -84,7 +84,7 @@ After uploading a document, you can select the view button on the home page to p
 Finally the time has come - actually sending your built document to a recipient! Looking at the home page which contains your table of uploaded documents, you are able to create a "Job". A "Job" is an instance of a document that contains
 a client and a status determining the state of the document. You can create a Job by selecting the "Send" button and either selecting one of your existing clients, or entering their name and email.
 
-![SendButton](./images/SendButton.PNG)
+![SendButton](./images/ButtonSend.png)
 ![SendModal](./images/SendModal.png)
 
 ### After Sending

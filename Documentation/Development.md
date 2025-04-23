@@ -68,6 +68,7 @@ Docker Compose spins up 4 images:
 - bsucheetahsign-cheetahsign-webclient-1
 
 This is how it will appear on Docker Desktop:
+
 ![dockerContainer](./images/DockerContainer.png)
 
 ### Editing the Frontend

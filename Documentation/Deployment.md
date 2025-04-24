@@ -2,18 +2,18 @@
 
 ## Overview
 
-Our project runs on a node.js web server and has been fully [Dockerized](https://medium.com/@swalperen3008/what-is-dockerize-and-dockerize-your-project-a-step-by-step-guide-899c48a34df6). It contains four Docker images running in a single container. The images include:
+This project is built with Vue.js + TypeScript, .NET w/ C#, and PostgreSQL. It has been fully containerized with Docker. It contains four Docker images running in a single container. These images include:
 
-- pg-admin: A web-based PostgreSQL database management tool that provides a UI to interact with your PostgreSQL database.
-- pgdata: The PostgreSQL database image that stores the application's database setup.
-- Cheetah Sign API: The backend for the application, which interacts with PostgreSQL and handles requests from end users.
-- cheetahsign.webclient: The frontend for the application
+- sign-pg-admin: A PostgreSQL database management tool that provides a UI to interact with your PostgreSQL database.
+- sign-pgdata: The PostgreSQL database image that stores the application's database setup.
+- sign-api: The backend for the application, which interacts with PostgreSQL and handles requests from end users.
+- cheetahsign.webclient-1: The frontend for the application
 
 For more information, refer to [Development.md](Development.md).
 
 ## Setting Up the Application
 
-As mentioned before, the application is Dockerized. This means the application is in a single container that contains all the code, the server, dependencies, configurations, etc. to run the application. To setup the system you must have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and follow these steps:
+As mentioned before, the application is Containerized. This means the application is in a single container that contains all the code, the server, dependencies, configurations, etc. to run the application. To setup the system you must have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and follow these steps:
 
 1. Follow the instructions to [clone the repository](Development.md#Prerequisites) containing the source code and docker files.
 
@@ -64,8 +64,8 @@ As mentioned before, the application is Dockerized. This means the application i
 Some of the main issues that could come up are usually related to Docker Compose. There are a few commands you can use in the terminal to troubleshoot those issues.
 
 - docker login -u
-  
-When you first try to run the application with Docker, you will probably get an authentication error. This means your IDE and Docker Desktop are not connected. You must login to Docker Desktop from your IDE to fix this problem. 'docker login -u' will let you enter your Docker username and password. 
+
+When you first try to run the application with Docker, you will probably get an authentication error. This means your IDE and Docker Desktop are not connected. You must login to Docker Desktop from your IDE to fix this problem. 'docker login -u' will let you enter your Docker username and password.
 
 - docker ps
 

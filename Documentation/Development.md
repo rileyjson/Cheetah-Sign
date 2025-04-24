@@ -60,7 +60,7 @@ You will then be asked for your Docker password. (you will not see your password
 ![dockerCompose](./images/dockerCompose.png)
 
 You will know if the build was successful when your container names appear in your terminal and
-Docker Compose spins up 4 images:
+Docker spins up 4 images:
 
 - sign-pgdata
 - sign-pgadmin

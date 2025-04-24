@@ -95,7 +95,7 @@ your database tables and fields, and it must coorelate with the actual database 
 
 ![pgAdmin](./images/pgadmin.png)
 
-To actually perform database operations, we use [Microsoft Entity Framework](https://learn.microsoft.com/en-us/aspnet/entity-framework) - an object-relational mapper. Entity Framework provides a seamless and efficient way to interact with a database by allowing you to work with them using C# objects. It works directly with the AppDbContext we mentioned ealier. These operations can be found in our 'endpoint-services' directory.
+To actually perform database operations, we use [Microsoft Entity Framework](https://learn.microsoft.com/en-us/aspnet/entity-framework) - an object-relational mapper. Entity Framework provides a seamless and efficient way to interact with a database by allowing you to work with them using C# objects. It works directly with the AppDbContext we mentioned ealier. These operations can be found in our 'Endpoints' directory.
 
 ## Accessing the Application & How to Test
 

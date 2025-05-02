@@ -14,7 +14,7 @@ Cheetah Sign is a application used to upload documents, store documents, build d
 ## **Client Partner Information**
 
 ### *Company:*
-Accutech
+Accutech Systems
 
 ### *People:*
 - Josh Rittenhouse
@@ -26,10 +26,6 @@ Accutech
 - [Team meeting minutes](MeetingMinutes/Team)
 - [Mentor meeting minutes](MeetingMinutes/Mentor)
 - [Client partner meeting minutes](MeetingMinutes/ClientPartner)
-
-## **Code Repositories**
-
-- [Mobile App - Android](https://www.github.com/WHEREEVER_THE_ANDROID_CODE_IS/)
 
 ## **Project Management Tool Link**
 

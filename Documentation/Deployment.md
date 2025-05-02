@@ -21,9 +21,10 @@ As mentioned before, the application is Containerized. This means the applicatio
    the projects directory. Run the command 'docker-compose up'. This should run the file contained in the root of the project called
    'docker-compose.yml'.
 
-3. Docker compose should spin up the [3 images](Development.md#back-end-setup) on Docker Desktop:
+3. Docker compose should spin up the [4 images](Development.md#back-end-setup) on Docker Desktop:
 
    - cheetah.sign.api
+   - cheetahsign-webclient
    - pgdata
    - pgadmin
 
@@ -56,8 +57,6 @@ As mentioned before, the application is Containerized. This means the applicatio
 - Env Variables and Modes | Vite
 - Deploy to a static host
 - Deploying a Static Site | Vite
-
-## Maintenance
 
 ## Troubleshooting
 

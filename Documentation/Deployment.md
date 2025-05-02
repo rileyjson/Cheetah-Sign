@@ -1,4 +1,4 @@
-# Deployment & Maintenance of Cheetah Sign
+# Deployment of Cheetah Sign
 
 ## Overview
 

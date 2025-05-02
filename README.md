@@ -1,14 +1,14 @@
-# Cheetah-Sign
+# Cheetah Sign
 
 ## **Summary**
 
-Put a very high-level summary of the project.
+Cheetah Sign is meant to replace DocuSign for Accutech to reduce the cost that would typically go into paying for DocuSign.
+Cheetah Sign is a application used to upload documents, store documents, build documents for signing, send documents to clients, allow clients to sign them, and then return and store the document.
 
 ## **Team Members**
 
 - Levi Shelley
 - Riley Jamison
-- Hunter Johns
 - Tia Self
 
 ## **Client Partner Information**
@@ -26,13 +26,10 @@ Accutech
 - [Team meeting minutes](MeetingMinutes/Team)
 - [Mentor meeting minutes](MeetingMinutes/Mentor)
 - [Client partner meeting minutes](MeetingMinutes/ClientPartner)
-- ... any other documents/links you see need
 
 ## **Code Repositories**
 
 - [Mobile App - Android](https://www.github.com/WHEREEVER_THE_ANDROID_CODE_IS/)
-- [Php Backend](https://www.github.com/WHEREEVER_THE_PHP_CODE_IS)
-- Others if more.
 
 ## **Project Management Tool Link**
 

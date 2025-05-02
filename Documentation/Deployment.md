@@ -11,23 +11,6 @@ This project is built with Vue.js + TypeScript, .NET w/ C#, and PostgreSQL. It h
 
 For more information, refer to [Development.md](Development.md).
 
-## Setting Up the Application
-
-As mentioned before, the application is Containerized. This means the application is in a single container that contains all the code, the server, dependencies, configurations, etc. to run the application. To setup the system you must have [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your machine and follow these steps:
-
-1. Follow the instructions to [clone the repository](Development.md#Prerequisites) containing the source code and docker files.
-
-2. Once cloned, open your command line and cd to
-   the projects directory. Run the command 'docker-compose up'. This should run the file contained in the root of the project called
-   'docker-compose.yml'.
-
-3. Docker compose should spin up the [4 images](Development.md#back-end-setup) on Docker Desktop:
-
-   - cheetah.sign.api
-   - cheetahsign-webclient
-   - pgdata
-   - pgadmin
-
 ## Deploying the Application
 
 ### API Deployment:
